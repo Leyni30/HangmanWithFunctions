@@ -15,14 +15,20 @@
         var pickWord = function () {
             var words = ['January', 'February', 'March', 'April', 'May', 'June'];
             return arr[Math.floor(Math.random() * words.length)];
-        }
+        };
+
         var setUpAnsweringArray = function (word) {
             var answer = [];
             for (var i = 0; i < word.length; i++) {
                 answer[i] = '_';
             }
             return answer;
-        }
+        };
+
+        var showPlayerProgress = function (answeringArray) {
+            alert(answeringArray.join(' '));
+        };
+
 
 
         var word = pickWord(words);
