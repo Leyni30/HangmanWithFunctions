@@ -10,6 +10,28 @@
 </head>
 
 <body>
+    <script>
+        // my Functions here
+
+        var words = ['January', 'February', 'March', 'April', 'May', 'June'];
+        var word = pickWord();
+        var answeringArray = setUpAnsweringArray(word);
+        var remainingLetters = word.length;
+
+        while (remainingLetters > 0) {
+            showPlayerProgress(answeringArray);
+            var guess = getGuess();
+            if (guess === null) {
+                break;
+            } else if (guess !== 1) {
+                alert('Please enter a single letter');
+            } else {
+                var correctGuesses = updateGameState(guess, word, answeringArray);
+                remainingLetters -= correctGuesses;
+            }
+        }
+        showAnswerAndCongratulatePlayer(answeringArray);
+    </script>
 
 </body>
 
