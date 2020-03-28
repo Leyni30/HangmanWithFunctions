@@ -12,9 +12,20 @@
 <body>
     <script>
         // my Functions here
+        var pickWord = function () {
+            var words = ['January', 'February', 'March', 'April', 'May', 'June'];
+            return arr[Math.floor(Math.random() * words.length)];
+        }
+        var setUpAnsweringArray = function (word) {
+            var answer = [];
+            for (var i = 0; i < word.length; i++) {
+                answer[i] = '_';
+            }
+            return answer;
+        }
 
-        var words = ['January', 'February', 'March', 'April', 'May', 'June'];
-        var word = pickWord();
+
+        var word = pickWord(words);
         var answeringArray = setUpAnsweringArray(word);
         var remainingLetters = word.length;
 
