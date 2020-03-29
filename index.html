@@ -14,13 +14,13 @@
         // my Functions here
         var pickWord = function () {
             var words = ['January', 'February', 'March', 'April', 'May', 'June'];
-            return arr[Math.floor(Math.random() * words.length)];
+            return words[Math.floor(Math.random() * words.length)];
         };
 
         var setUpAnsweringArray = function (word) {
             var answeringArray = [];
             for (var i = 0; i < word.length; i++) {
-                answer[i] = '_';
+                answeringArray[i] = '_';
             }
             return answeringArray;
         };
@@ -50,7 +50,7 @@
         }
 
 
-        var word = pickWord(words);
+        var word = pickWord();
         var answeringArray = setUpAnsweringArray(word);
         var remainingLetters = word.length;
 
