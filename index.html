@@ -44,7 +44,10 @@
             return appearances;
         };
 
-
+        var showAnswerAndCongratulatePlayer = function (answeringArray) {
+            showPlayerProgress(answeringArray);
+            alert('Great job! The answer was ' + answeringArray.join(''));
+        }
 
 
         var word = pickWord(words);
