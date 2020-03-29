@@ -35,9 +35,9 @@
 
         var updateGameState = function (guess, word, answeringArray) {
             var appearances = 0;
-            for (var i = 0; i < word.length; i++) {
-                if (word[i] === guess) {
-                    answeringArray[i] = guess;
+            for (var j = 0; j < word.length; j++) {
+                if (word[j] === guess) {
+                    answeringArray[j] = guess;
                     appearances++;
                 }
             }
