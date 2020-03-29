@@ -18,11 +18,11 @@
         };
 
         var setUpAnsweringArray = function (word) {
-            var answer = [];
+            var answeringArray = [];
             for (var i = 0; i < word.length; i++) {
                 answer[i] = '_';
             }
-            return answer;
+            return answeringArray;
         };
 
         var showPlayerProgress = function (answeringArray) {
@@ -31,7 +31,20 @@
 
         var getGuess = function () {
             return prompt('Guess a letter or click Cancel to stop playing.');
-        }
+        };
+
+        var updateGameState = function (guess, word, answeringArray) {
+            var appearances = 0;
+            for (var i = 0; i < word.length; i++) {
+                if (word[i] === guess) {
+                    answeringArray[i] = guess;
+                    appearances++;
+                }
+            }
+            return appearances;
+        };
+
+
 
 
         var word = pickWord(words);
