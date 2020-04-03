@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <h1>Hangman</h1>
     <script>
         // my Functions here
         var pickWord = function () {
@@ -36,7 +37,7 @@
         var updateGameState = function (guess, word, answeringArray) {
             var appearances = 0;
             for (var j = 0; j < word.length; j++) {
-                if (word[j] === guess) {
+                if (word[j].toLowerCase() === guess && answeringArray[j] === '_') {
                     answeringArray[j] = guess;
                     appearances++;
                 }
@@ -45,6 +46,7 @@
         };
 
         var showAnswerAndCongratulatePlayer = function (answeringArray) {
+            answeringArray[0].toUpperCase();
             showPlayerProgress(answeringArray);
             alert('Great job! The answer was ' + answeringArray.join(''));
         }
